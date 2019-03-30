@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>瀑布流</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .waterfall {
+          /* max-width: 600px; */
+          margin: 0 auto;
+          height: 100vh;
+          position: relative;
+        }
+       
+        .block{
+            position: absolute;
+            width: 250px;
+            margin: 10px;
+            /* 过渡效果 */
+            transition: all 0.4s;
+        }
+        @media (max-width: 600px) {
+            .block{
+                width: 45vw;
+            }
+        }
+    </style>
+</head>
+<body>
+  <div class="waterfall">
+  	
+  </div>
+
+
+<script src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/js/lib/jquery-1.10.2_1c4228b8.js"></script>
+<script>
+    
+    function RGB(){
+        let r = parseInt(Math.random() * 256), //0-255
+            g = parseInt(Math.random() * 256), //0-255
+            b = parseInt(Math.random() * 256); //0-255
+           return `rgb(${r},${g},${b})` //使用了es6的模板字符串
+    }
+
+
+    for(var i=0; i<100;i++){
+        var a=$("<div class='block'></div>").css(
+            {
+                background: RGB(),
+                height: Math.floor(Math.random()*300)+100+'px'
+            })
+        $('.waterfall').append(a)
+    }
+
+
+
+    
+    //当窗口大小重置之后，重新执行
+    $(window).on('resize',function(){
+        reset()
+    })
+    
+    
+    //当窗口加载完毕，执行瀑布流
+    $(window).on('load',function(){
+        reset()
+    })
+
+    //定义瀑布流布局函数
+    function reset(){
+	    var colHeightArry= []    //定义列数组,作为每一张图片应在第几列(所有列中最短那一列)
+        var imgWidth = $('.block').outerWidth(true)   //单张图片的宽度
+
+        var colCount = parseInt( $(window).width()/imgWidth )  //屏幕宽度除以图片宽度,等于列数
+
+        $('.waterfall').css('width',colCount * imgWidth +'px'); 
+        console.log('触发了')
+
+        for(var i = 0 ; i < colCount; i ++){  //把同一行的数组初始化
+            colHeightArry[i] = 0
+        }
+
+        // console.log(colHeightArry)
+
+        $('.block').each(function(){
+
+            // console.log(colHeightArry)
+
+            let minValue = colHeightArry[0]  //初始化最小位置和索引
+            let minIndex = 0
+            
+            for(var i = 0 ; i < colCount; i ++){  //通过循环获取高度最短那一列的值和索引,值用来叠加高度,索引用来替换新的值
+              if(colHeightArry[i] < minValue){
+            
+                minValue = colHeightArry[i]   //最短那一列高度
+            
+                minIndex = i         //最短那一列索引
+            
+              }
+            }
+
+
+            // console.log(minIndex * imgWidth,minValue)
+
+            
+            //设置新图片的位置为第几列,索引 乘以 图片宽度    /   minValue为最短的那一列的高度
+            
+            $(this).css({  
+              left: minIndex * imgWidth,
+              top:  minValue
+            })
+
+
+            //设置完高度后把这一列的位置加上新图片的高度作为新的高度
+            colHeightArry[minIndex] += $(this).outerHeight(true)
+
+
+            // console.log(colHeightArry[minIndex])
+            
+
+        })
+   }
+/*
+    思路:
+        1.首先创建一行n列的数组,代表图片在一行中的第几个位置
+
+        2.设置默认高最短的图片位置为 高0 索引0  ----因为第一张没有位置比较
+        
+        3.每张图片都去位置数组里比较,位置数组里哪列最短,它的值就是就是新图的top, 位置*宽就是新图的left
+
+        4.每次设置完后把新图的高加在原来那列的高度上获得新的高度
+
+
+*/
+</script>
+</body>
+</html>

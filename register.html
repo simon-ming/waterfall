@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>注册</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/register.css">
+	<script type="text/javascript" src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/jquery/jquery-1.10.2.min_65682a2.js"></script>
+</head>
+<body>
+	<div id="app">
+		<div class="god-logo"></div>
+
+		<form class="actionform deal-top"  action="" method="">
+			<div class="form-main">
+				<label for="phone">请输入手机号</label>
+				<div class="verify-box">
+					<input type="text" class="com-input full" id="phone"  name="phone" placeholder="手机号">
+					<div class="clear"></div>
+				</div> 	
+
+				<label for="imgCode">请输入图形验证码</label>
+				<div class="verify-box clearfix">
+					<input type="text" class="com-input half left" id="imgCode"  name="imgCode" placeholder="图形验证码">
+					<div class="img-code other">
+						<img src="">
+					</div>
+				</div>
+
+				<label for="phone_code">手机验证码</label>
+				<div class="verify-box clearfix">
+					<input type="text" class="com-input half left" id="phone_code"  name="phone_code" placeholder="手机验证码">
+					<!-- <div class="btn other">重新获取(<span>60</span>)</div> -->
+					<div class="btn other">获取验证码</div>
+				</div>
+
+				<label for="password">请设置密码</label>
+				<input type="password" class="com-input full" id="password"  name="password" placeholder="5位以上数字+字母">
+				
+				<div class="commit-box">
+					
+					<input type="submit" name="submit" class="full com-input commit" value="">
+					
+				</div>
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript" src="js/prefix.js"></script>
+	
+	<script type="text/javascript">
+		$(function(){
+
+			var phone=/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/,
+				password=/([a-zA-Z]+|[0-9]+){5,15}/
+
+			$('#phone').blur(function(){
+				if(phone.test($(this).val())){
+					console.log('true')
+				}else{
+					console.log('false')
+				}
+			})
+			$('.clear').click(function(){
+				$("#phone").val('')
+			})
+			// $('#password').blur(function(){
+			// 	if(password.test($(this).val())){
+			// 		console.log('true')
+			// 	}else{
+			// 		console.log('false')
+			// 	}
+			// })
+		})
+	</script>
+</body>
+</html>

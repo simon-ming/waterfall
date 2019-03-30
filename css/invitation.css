@@ -1,0 +1,270 @@
+html{
+	/* font-size: 100px; */
+	font-size: 26.67vw;
+	font-family: PingFang SC;
+}
+
+#app{
+	overflow-y: scroll;
+	overflow-x: hidden;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+}
+.app-content{
+	/* height: 8.95rem; */
+	background: #2A0101 url('../img/invitation_bg.png')  no-repeat;
+	background-size: contain;
+	overflow: hidden;
+}
+.player-box{
+	width: 3.27rem;
+	height: 1.72rem;
+	margin: 3.27rem auto 0;
+	background: rgba(125,56,4,0.5);
+	box-shadow: 0 0.06rem 0.1rem rgba(0,0,0,0.13);
+	border-radius: 0.04rem;
+	position: relative;
+}
+.player-msg{
+	width: 2.6rem;
+	height: 0.48rem;
+	position: absolute;
+	top: -0.24rem;
+	left: 0.34rem;
+	background: #7D3804;
+}
+.player-avatar{
+	width: 0.24rem;
+	height: 0.24rem;
+	margin: 0.12rem 0.12rem 0 0.24rem;
+	float: left;
+}
+.player-name{
+	width: 1rem;
+	height: 0.28rem;
+	margin: 0.1rem 0.23rem 0 0;
+	float: left;
+	font-size: 0.2rem;
+	line-height: 0.28rem;
+	color: #fff;
+}
+.player-level{
+	float: left;
+	font-size: 0.12rem;
+	width: 0.75rem;
+	height: 0.17rem;
+	line-height: 0.17rem;
+	margin-top: 0.19rem;
+	color: rgba(255,255,255,0.5);
+}
+
+.player-box h3{
+	margin-top: 0.5rem;
+	font-size: 0.2rem;
+	height: 0.28rem;
+	line-height: 0.28rem;
+	color: #fff;
+	text-align: center;
+}
+.player-box p{
+	height: 0.22rem;
+	line-height: 0.22rem;
+	text-align: center;
+	font-size: 0.16rem;
+	color: #fff;
+}
+
+.coin-show{
+	width: 2.6rem;
+	height: 0.24rem;
+	margin: 0.12rem auto;
+	text-align: center;
+	font-size: 0;
+}
+.coin{
+	width: 0.24rem;
+	height: 0.24rem;
+	display: inline-block;
+	margin: 0 0.06rem;
+}
+
+.package-title,.txt-bg,.txt{
+	width: 2.32rem;
+	height: 0.5rem;
+	font-size: 0.24rem;
+	color: #FFC476;
+	text-align: center;
+	line-height: 0.5rem;
+}
+.package-title{
+	margin: 0.44rem  auto 0.66rem;
+	background: #2A0101 url('../img/title_bg.png')  no-repeat;
+	background-size: cover;
+	position: relative;
+
+}
+.txt{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1
+}
+.txt-bg{
+	color: #000;
+	position: absolute;
+	top: 0.01rem;
+	left: 0;
+	/* z-index: -1; */
+}
+.god-car{
+	width: 3.27rem;
+	height: 1.37rem;
+	background:rgba(83,28,2,0.5);
+	border:0.02rem solid rgba(246,197,197,0.2);
+	box-shadow:0px 10px 46px rgba(135,73,51,0.29);
+	border-radius:4px;
+	margin: 0 auto;
+	position: relative
+}
+.car,.car-body{
+	width: 1.54rem;
+	height: 1.33rem;
+}
+.car{
+	position: absolute;
+	left: 0.21rem;
+	bottom: 0.28rem;
+}
+.car-body{
+
+}
+.car-wheel{
+	width: 0.44rem;
+	height: 0.44rem;
+	position: absolute;
+	top: -0.17rem;
+	right: -0.03rem;
+}
+.car-des{
+	width: 1.2rem;
+	float: right;
+
+}
+.car-des h2{
+	line-height: 0.28rem;
+	font-size: 0.2rem;
+	color: #fff;
+	margin: 0.16rem 0 0.15rem;
+}
+.car-des p{
+	line-height: 0.18rem;
+	font-size: 0.12rem;
+	color: rgba(255,255,255,0.6)
+}
+
+
+
+
+
+
+
+
+
+
+.s-icon{
+	width: 0.16rem;
+	height: 0.16rem;
+	float: left;
+	margin-left: 0.91rem;
+}
+.small-tip p{
+	float: left;
+	font-size: 0.12rem;
+	line-height: 0.17rem;
+	margin-left: 0.12rem;
+	color: rgba(255,255,255,0.5);
+}
+.small-tip{
+	margin: 0.13rem auto 0.24rem;
+}
+.add{
+	display: block;
+	width: 3.51rem;
+	height: 0.51rem;
+	margin: 0.12rem auto;
+	background: url('../img/button.png') no-repeat;
+	background-size: cover;
+	font-size: 0.18rem;
+	color: #fff;
+	line-height: 0.51rem;
+	text-align: center;
+}
+.resolve-time{
+	font-size: 0.14rem;
+	line-height: 0.2rem;
+	color: #FDB36E;
+	text-align: center;
+}
+
+.package{
+	width: 3.27rem;
+	height: 2.4rem;
+	margin: 0.12rem auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.gift{
+	width:0.97rem;
+	height:0.97rem;
+	background:rgba(62,14,1,0.5);
+	border:0.02rem solid rgba(246,197,197,0.2);
+	box-shadow:0rem 0.03rem 0.2rem rgba(0,0,0,0.16);
+	border-radius:0.04rem;
+}
+.gift p{
+	font-size: 0.14rem;
+	line-height: 0.16rem;
+	color:rgba(255,255,255,0.5);
+	text-align: center;
+	line-height: 0.2rem
+}
+.imgbox{
+	height: 0.75rem;
+	line-height: 0.75rem;
+	text-align: center;
+}
+.imgbox img,.license{
+	/* transform: scale(0.5); */
+	display: inline-block;
+	vertical-align: middle
+}
+.imgbox img{
+	width: 0.8rem;
+	height: 0.6rem;
+}
+.license{
+	width: 0.89rem;
+	height: 0.29rem;
+	line-height: 0.29rem;
+	background: url('../img/license.png') no-repeat;
+	background-size: cover;
+	font-size:0.12rem;
+	transform: scale(0.8);
+	color:rgb(255,255,255);
+}
+
+
+@media (min-width: 600px){
+	#app{
+		width: 600px;
+		left: 50%;
+		margin-left: -300px;
+	}
+	html{
+		font-size: 160px;
+	}
+}

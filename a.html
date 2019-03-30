@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<script type="text/javascript" src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/jquery/jquery-1.10.2.min_65682a2.js"></script>
+
+	<style type="text/css">
+		html{
+			/* font-size: 100px; */
+			font-size: 26.67vw;
+			font-family: PingFang SC;
+		}
+
+		#app,.app-bg{
+			overflow-y: scroll;
+			overflow-x: hidden;
+			width: 100%;
+			height: 6.67rem;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			background: rgb(50,33,27) url('img/background.png') 0 -0.64rem no-repeat;
+			background-size: cover;
+		}
+		#app{
+			z-index: -3;
+
+		}
+		.app-bg{
+			background:url('img/b.png') 0 -0.64rem no-repeat;
+			background-size: cover;
+			z-index: -1;
+		}
+		.ping{
+			width: 1.3rem;
+			height: 1.46rem;
+			margin: 1.18rem 1.22rem 0 1.23rem
+		}
+		.ping img{
+			width: 100%;
+			height: 100%;
+		}
+		@keyframes move
+		{
+			0%{
+				left:0.2rem;
+			}
+			50%{
+				left:0.45rem;
+			}
+			100%{
+				left:0.2rem;
+			}
+		}
+		.wave{
+			position: absolute;
+			width: 3.1rem;
+			height: 1.6rem;
+			top: 1.72rem;
+			left: -0.8rem;
+			z-index: -2;
+			animation:move 6s linear infinite;
+			overflow: visible;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<div class="app-bg">
+			
+		</div>
+		<svg id="wave" class="wave" data-name="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 585 607.17">
+			<defs>
+				<style>.cls-1{fill:#4febf4;}.cls-2{fill:#2ac9d1;}</style>
+			</defs>
+			<path class="cls-1" d="M-106.33,68.55V667h585V68.55S438.89,72,425.36,72,404.79,65.5,391,65.5,358.76,53,345.5,53,287.31,80,273,80s-35.33-24.33-64.5-27c-42.83,0-44.5,16.33-100,20C70,73,49.63,57.5,26.5,57.5S-28.33,56.33-83.71,75.84C-104,81-106.33,68.55-106.33,68.55Z" transform="translate(106.33 -53)"/>
+			<path class="cls-2" d="M-106.33,76.22V674.67h585V76.22S418.8,90,405,90c-37,.5-39-22.5-68.67-20.33-28.83,2.83-21,21-67.67,25.67C230.67,96.67,202,75.22,183,75.22S123.33,88.33,67.5,86C37.33,86,33,67.5-4.5,67.5-37.67,73.33-35,91.33-72.67,91.33-94,93.67-106.33,76.22-106.33,76.22Z" transform="translate(106.33 -53)"/>
+		</svg>
+		<div class="ping">
+			<img src="img/pin.png">
+		</div>
+		<div class="bottle">
+			
+		</div>
+	</div>
+	<script type="text/javascript">
+		$('.wave').css('top',2.6+'rem')
+		var i=0
+	　　  $(document).keydown(function(event){
+		　　  if(event.keyCode == 38){
+				 i++
+				 if(i>=6){
+				 	i=6
+				 }
+		　　      $('.wave').animate({top:2.6-0.2*i+'rem'})
+		　　  }
+			if(event.keyCode == 40){
+				i--;
+				if(i<=0){
+					i=0
+				}
+		　　    $('.wave').animate({top:2.6-0.2*i+'rem'})
+		　　  }
+	　　  });
+	</script>
+</body>
+</html>

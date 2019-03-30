@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>注册成功</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/jquery/jquery-1.10.2.min_65682a2.js"></script>
+</head>
+<body>
+	<div id="app">
+		<div class="status-icon success"></div>
+		<div class="status-tip ">注册成功</div>
+		<p class="tip-txt fail-tip"></p>
+		<h5 class="small-tip clearfix">
+			<img src="img/logo1.png" alt="" class="s-icon">
+			<p>全球首款区块链竞技&挖矿游戏</p>
+		</h5>
+		<a href="javascript:void(0)" class="add">立即下载&nbsp;&nbsp;(<span>5</span>)</a>
+	</div>
+	<script type="text/javascript" src="js/prefix.js"></script>
+	
+	<script type="text/javascript">
+		
+		var i=5;
+		var timer=setInterval(function(){
+			i--;
+			if(i<=0){
+				clearInterval(timer);
+				location.href="download.html"
+			}
+			$('.add span').html(i);
+		},1000)
+
+	</script>
+</body>
+</html>
